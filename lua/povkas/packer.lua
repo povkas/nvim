@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   vim.cmd[[colorscheme tokyonight-night]]
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('theprimeagen/harpoon')
 
   use('tpope/vim-fugitive')
 
