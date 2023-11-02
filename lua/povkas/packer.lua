@@ -15,12 +15,21 @@ return require('packer').startup(function(use)
 
   use 'ThePrimeagen/vim-be-good'
 
-  use 'folke/tokyonight.nvim'
+  use('MunifTanjim/prettier.nvim')
+
+  use('sbdchd/neoformat')
+  use('folke/tokyonight.nvim')
+
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
   vim.cmd[[colorscheme tokyonight-night]]
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('theprimeagen/harpoon')
+
 
   use('tpope/vim-fugitive')
 

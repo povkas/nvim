@@ -6,12 +6,21 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
-
 require("mason").setup()
--- (Optional) Configure lua language server for neovim
+require('mason-lspconfig').setup({
+    ensure_installed = {'tsserver', 'eslint', 'lua_ls', 'bashls'},
+    handlers = {
+        lsp.default_setup,
+--        lua_ls = function()
+--            require('lspconfg').lua_ls.setup({lsp.nvim_lua_ls})
+--        end
+    },
+})
+
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').tsserver.setup{}
+require('lspconfig').bashls.setup{}
+require('lspconfig').eslint.setup{}
+require("prettier").setup()
 
-lsp.setup_servers({'tsserver', 'jdtls'})
-
+lsp.setup_servers({'jdtls'})
 lsp.setup()
