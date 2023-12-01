@@ -4,50 +4,50 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use('wbthomason/packer.nvim')
+    -- Packer can manage itself
+    use('wbthomason/packer.nvim')
 
-  use({
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  })
+    use({
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.2',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    })
 
-  use('ThePrimeagen/vim-be-good')
+    use('MunifTanjim/prettier.nvim')
 
-  use('MunifTanjim/prettier.nvim')
+    use('sbdchd/neoformat')
 
-  use('sbdchd/neoformat')
+    use('christoomey/vim-tmux-navigator')
 
-  use('folke/tokyonight.nvim')
+    use('folke/tokyonight.nvim')
 
-  use('nvim-treesitter/nvim-treesitter-context')
+    use('nvim-treesitter/nvim-treesitter-context')
 
-  use('ggandor/leap.nvim')
+    use('ggandor/leap.nvim')
 
-  use({
-      'nvim-lualine/lualine.nvim',
-      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  })
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    })
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-  use('theprimeagen/harpoon')
+    use('theprimeagen/harpoon')
 
-  use('tpope/vim-fugitive')
+    use('tpope/vim-fugitive')
 
-  use({
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v3.x',
-      requires = {
-          {'williamboman/mason.nvim'},
-          {'williamboman/mason-lspconfig.nvim'},
-          -- LSP Support
-          {'neovim/nvim-lspconfig'},
-          -- Autocompletion
-          {'hrsh7th/nvim-cmp'},
-          {'hrsh7th/cmp-nvim-lsp'},
-          {'L3MON4D3/LuaSnip'},
-      }
-})
+    use({
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'L3MON4D3/LuaSnip' },
+        }
+    })
 end)
-
