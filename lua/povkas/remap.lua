@@ -1,10 +1,9 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "<leader>nf", vim.cmd.Neoformat);
-vim.keymap.set("n", "<leader>ef", vim.cmd.EslintFixAll);
-
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+--vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, ops)
+vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {})
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {})

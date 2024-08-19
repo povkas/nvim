@@ -13,9 +13,32 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     })
 
-    use('MunifTanjim/prettier.nvim')
+    use({
+        "stevearc/conform.nvim",
+        config = function()
+            require("conform").setup({
+                formatters_by_ft = {
+                    javascript = { "prettierd", "prettier", "eslint_d", lsp_format = "fallback" },
+                    typescript = { "prettierd", "prettier", "eslint_d", lsp_format = "fallback" },
+                },
+            })
+        end,
+    })
 
-    use('sbdchd/neoformat')
+    use({
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end,
+    })
+
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    }
 
     use('christoomey/vim-tmux-navigator')
 
@@ -29,6 +52,8 @@ return require('packer').startup(function(use)
     })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+
+    use('smartpde/telescope-recent-files')
 
     use('theprimeagen/harpoon')
 

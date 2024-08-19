@@ -1,5 +1,7 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
+vim.api.nvim_set_keymap('n', '<leader>gb', [[:Git blame<CR>]], { noremap = true, silent = true })
+
 vim.api.nvim_create_autocmd("BufWinEnter", {
     pattern = "*",
     callback = function()
@@ -15,7 +17,8 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 
         -- rebase always
         vim.keymap.set("n", "<leader>P", function()
-            vim.cmd.Git('pull --rebase')
+            --    vim.cmd.Git('pull --rebase')
+            vim.cmd.Git('pull')
         end, opts)
 
         -- NOTE: It allows me to easily set the branch i am pushing and any tracking
