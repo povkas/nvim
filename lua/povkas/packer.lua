@@ -23,8 +23,6 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/nvim-treesitter-context')
 
-    use('ggandor/leap.nvim')
-
     use({
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
